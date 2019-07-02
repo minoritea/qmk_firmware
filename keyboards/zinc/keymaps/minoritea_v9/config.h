@@ -24,10 +24,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "serial_config_simpleapi.h"
 
 #define RAISE  LT(_RAISE, KC_SPC)
-#define TOGGLE TG(_RAISE)
+#define LOWER  MO(_LOWER)
 #define IM_TGL LGUI(KC_SPC)
 
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
 #define RETRO_TAPPING
+
+#ifdef TAPPING_TERM 
+  #undef TAPPING_TERM
+#endif
+
 #define TAPPING_TERM 400
