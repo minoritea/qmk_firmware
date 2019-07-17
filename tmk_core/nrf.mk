@@ -940,7 +940,8 @@ nrfutil: $(TARGET).zip
 		fi; \
 		sleep 1; \
 		echo "Programming Started"; \
-		$(NRFUTIL) dfu usb_serial -pkg $(TARGET).zip -p $$USB; \
+		# replace dash to underscore if python's `click` package is older than 7.0.
+		$(NRFUTIL) dfu usb-serial -pkg $(TARGET).zip -p $$USB; \
 	fi
 
 elf: $(NRFLIB)
